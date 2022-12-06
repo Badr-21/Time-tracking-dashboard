@@ -5,7 +5,7 @@ const weeklySelection = document.querySelector(".weekly");
 const monthlySelection = document.querySelector(".monthly");
 const selections = document.querySelectorAll(".report > p");
 
-fetch("/data.json")
+fetch("./data.json")
 .then(response =>  {
     return response.json()
 })
