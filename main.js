@@ -1,17 +1,15 @@
-
+const allCurrent = document.querySelectorAll(".current");
+const allPrevious = document.querySelectorAll(".previous");
+const dailySelection = document.querySelector(".daily");
+const weeklySelection = document.querySelector(".weekly");
+const monthlySelection = document.querySelector(".monthly");
+const selections = document.querySelectorAll(".report > p");
 
 fetch("/data.json")
 .then(response =>  {
     return response.json()
 })
 .then(data => {
-    const allCurrent = document.querySelectorAll(".current");
-    const allPrevious = document.querySelectorAll(".previous");
-    const dailySelection = document.querySelector(".daily");
-    const weeklySelection = document.querySelector(".weekly");
-    const monthlySelection = document.querySelector(".monthly");
-    const selections = document.querySelectorAll(".report > p");
-
     data.forEach(ele => {
         for(let i = 0; i < allCurrent.length; i++) {
             if(allCurrent[i].previousElementSibling.innerText === ele.title) {
@@ -20,7 +18,9 @@ fetch("/data.json")
             }
         } 
     });
-
+    return data
+})
+.then(data => {
     selections.forEach(selection => {
         selection.addEventListener("click", () => {
             for(let i = 0; i < selections.length; i++) {
