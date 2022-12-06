@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*## Colors
+    ### Primary*/
+    --Blue: hsl(246, 80%, 60%);
+
+    --Light-red-one /*(work)*/: hsl(15, 100%, 70%);
+    --Soft-blue /*(play)*/: hsl(195, 74%, 62%);
+    --Light-red-two /*(study)*/: hsl(348, 100%, 68%);
+    --Lime-green /*(exercise)*/: hsl(145, 58%, 55%);
+    --Violet /*(social)*/: hsl(264, 64%, 52%);
+    --Soft-orange /*(self care)*/: hsl(43, 84%, 65%);
+    /*### Neutral*/
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--Very-dark-blue);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 60rem;
+    display: flex;
+    gap: 0 1rem;
+}
+
+.container .report {
+    width: 35%;
+    padding-bottom: 1rem;
+    background-color: var(--Dark-blue);
+    border-radius: .5rem;
+    border-radius: .7rem .7rem .5rem .5rem;
+}
+
+.container .report .report-for {
+    padding: 1.625rem;
+    margin-bottom: .5rem;
+    background-color: var(--Blue);
+    border-radius: .5rem;
+}
+
+.container .report .report-for img {
+    width: 40%;
+    border: 0.125rem solid white;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.container .report .report-for p {
+    font-size: 0.8125rem;
+    color: var(--Pale-Blue);
+    margin-bottom: .2rem;
+}
+
+.container .report .report-for h1 {
+    width: 50%;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 2.8rem;
+}
+
+.container .report > p {
+    padding: 1.2rem 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--Pale-Blue);
+}
+
+.container .report .active{
+    color: white;
+}
+
+.container .times {
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container .times > div {
+    width: calc((100%  - 2rem) / 3);
+    background-size: 15%;
+    border-radius: .5rem .5rem .7rem .7rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.container .times .work {
+    background: url("images/icon-work.svg") no-repeat;
+    background-size: 25%;
+    background-position: 10.2rem -.5rem;
+    background-color: var(--Light-red-one);
+}
+
+.container .times .play {
+    background: url("images/icon-play.svg") no-repeat;
+    background-size: 25%;
+    background-position: 10.2rem -.4rem;
+    background-color: var(--Soft-blue);
+}
+
+.container .times .study {
+    background: url("images/icon-study.svg") no-repeat;
+    background-size: 25%;
+    background-position: 10.2rem -.5rem;
+    background-color: var(--Light-red-two);
+}
+
+.container .times .exersice {
+    background: url("images/icon-exercise.svg") no-repeat;
+    background-size: 25%;
+    background-position: 10.2rem -.2rem;
+    background-color: var(--Lime-green);
+}
+
+.container .times .social {
+    background: url("images/icon-social.svg") no-repeat;
+    background-size: 25%;
+    background-position: 10.5rem -.8rem;
+    background-color: var(--Violet);
+}
+
+.container .times .self-care {
+    background: url("images/icon-self-care.svg") no-repeat;
+    background-size: 20%;
+    background-position: 11rem -.5rem;
+    background-color: var(--Soft-orange);
+}
+
+.container .times > div > div {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1.5rem 1.5rem 1rem;
+    background-color: var(--Dark-blue);
+    border-radius: .5rem;
+}
+
+.container .times > div > div h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.container .times > div > div h2:before {
+    content: url("images/icon-ellipsis.svg");
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.container .times > div > div .current {
+    font-size: 3.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.container .times > div > div .previous {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--Pale-Blue);
+}
+
+@media(hover: hover) {
+    .container .report > p:hover {
+        cursor: pointer;
+        color: white
+    }
+
+    .container .times > div > div:hover {
+        cursor: pointer;
+        background-color: var(--Desaturated-blue);
+    }
+}
