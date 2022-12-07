@@ -21,7 +21,7 @@
 
 body {
     font-family: 'Rubik', sans-serif;
-    width: 100vw;
+    max-width: 100vw;
     height: 100vh;
     background-color: var(--Very-dark-blue);
     color: white;
@@ -66,20 +66,20 @@ body {
 
 .container .report .report-for h1 {
     width: 50%;
-    font-size: 34px;
+    font-size: 2.125rem;
     font-weight: 400;
     line-height: 1.4;
     margin-bottom: 2.8rem;
 }
 
-.container .report > p {
+.container .report .selections p {
     padding: 1.2rem 0 0 1rem;
     font-size: 1rem;
     font-weight: 400;
     color: var(--Pale-Blue);
 }
 
-.container .report .active{
+.container .report .selections .active{
     color: white;
 }
 
@@ -179,7 +179,7 @@ body {
 }
 
 @media(hover: hover) {
-    .container .report > p:hover {
+    .container .report .selections p:hover {
         cursor: pointer;
         color: white
     }
@@ -187,5 +187,111 @@ body {
     .container .times > div > div:hover {
         cursor: pointer;
         background-color: var(--Desaturated-blue);
+    }
+}
+
+@media(max-width: 975px)  {
+
+    body {
+        height: auto;
+        padding: 5rem 0;
+    }
+
+    .container {
+        width: 50rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .container .report {
+        width: 20rem;
+        margin-bottom: 1rem;
+    }
+    .container .report .report-for {
+        display: flex;
+        border: 1px solid;
+        align-items: center;
+    }
+
+    .container .report .report-for .avatar {
+        width: 30%;
+    }
+
+    .container .report .report-for img {
+        width: 80%;
+        border: 0.125rem solid white;
+        border-radius: 50%;
+        margin-bottom: 0;
+    }
+    
+    .container .report .report-for p {
+        font-size: 0.8125rem;
+        color: var(--Pale-Blue);
+        margin-bottom: .2rem;
+    }
+    
+    .container .report .report-for h1 {
+        width: 100%;
+        font-size: 1.5rem;
+        line-height: normal;
+        margin-bottom: 0;
+    }
+
+    .container .report .selections {
+        display: flex;
+        justify-content: space-around
+    }
+
+    .container .report .selections p {
+        padding: 1.2rem 0 0 0rem;
+    }
+}
+
+@media(max-width: 775px) {
+
+    .container {
+        width: 40rem;
+    }
+
+    .container .times > div {
+        width: calc((100%  - 1rem) / 2);
+    }
+
+    .container .times {
+        width: 33rem;
+    }
+}
+
+@media(max-width: 575px) {
+
+    .container {
+        width: 30rem;
+        justify-content: center;
+    }
+
+    .container .times > div {
+        width: 100%;
+    }
+
+    .container .times {
+        width: 20rem;
+    }
+
+}
+
+@media(max-width: 375px) {
+    .container .times div div .state {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+    }
+
+    .container .times div div .current {
+        font-size: 1.8rem;
+    }
+
+    .container .times div div .previous {
+        font-size: .8rem;
     }
 }

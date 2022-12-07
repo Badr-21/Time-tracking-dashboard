@@ -3,7 +3,8 @@ const allPrevious = document.querySelectorAll(".previous");
 const dailySelection = document.querySelector(".daily");
 const weeklySelection = document.querySelector(".weekly");
 const monthlySelection = document.querySelector(".monthly");
-const selections = document.querySelectorAll(".report > p");
+const selections = document.querySelectorAll(".selections > p");
+console.log(selections)
 
 fetch("./data.json")
 .then(response =>  {
@@ -12,7 +13,7 @@ fetch("./data.json")
 .then(data => {
     data.forEach(ele => {
         for(let i = 0; i < allCurrent.length; i++) {
-            if(allCurrent[i].previousElementSibling.innerText === ele.title) {
+            if(allCurrent[i].parentElement.previousElementSibling.innerText === ele.title) {
                 allCurrent[i].innerText = `${ele.timeframes.weekly.current}hrs`;
                 allPrevious[i].innerText = `last Week - ${ele.timeframes.weekly.previous}hrs`;
             }
@@ -34,7 +35,7 @@ fetch("./data.json")
                     if(selections[j] === weeklySelection) {
                         data.forEach(ele => {
                             for(let i = 0; i < allCurrent.length; i++) {
-                                if(allCurrent[i].previousElementSibling.innerText === ele.title) {
+                                if(allCurrent[i].parentElement.previousElementSibling.innerText === ele.title) {
                                     allCurrent[i].innerText = `${ele.timeframes.weekly.current}hrs`;
                                     allPrevious[i].innerText = `last Week - ${ele.timeframes.weekly.previous}hrs`;
                                 }
@@ -43,7 +44,7 @@ fetch("./data.json")
                     }if(selections[j] === dailySelection) {
                         data.forEach(ele => {
                             for(let i = 0; i < allCurrent.length; i++) {
-                                if(allCurrent[i].previousElementSibling.innerText === ele.title) {
+                                if(allCurrent[i].parentElement.previousElementSibling.innerText === ele.title) {
                                     allCurrent[i].innerText = `${ele.timeframes.daily.current}hrs`;
                                     allPrevious[i].innerText = `last day - ${ele.timeframes.daily.previous}hrs`;
                                 }
@@ -52,7 +53,7 @@ fetch("./data.json")
                     }if(selections[j] === monthlySelection) {
                         data.forEach(ele => {
                             for(let i = 0; i < allCurrent.length; i++) {
-                                if(allCurrent[i].previousElementSibling.innerText === ele.title) {
+                                if(allCurrent[i].parentElement.previousElementSibling.innerText === ele.title) {
                                     allCurrent[i].innerText = `${ele.timeframes.monthly.current}hrs`;
                                     allPrevious[i].innerText = `last month - ${ele.timeframes.monthly.previous}hrs`;
                                 }
